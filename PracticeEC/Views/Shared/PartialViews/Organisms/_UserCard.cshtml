@@ -1,10 +1,11 @@
-﻿@model User
+﻿@model UserCardViewModel
 
 @{
-    var user = Model;
+    var user = Model.User;
+    var classes = Model.classes;
 }
 
-<div class="userCard">
+<div class="userCard @classes">
     <p>ID: @user.Id</p>
     <p>Name: @user.Name</p>
 </div>

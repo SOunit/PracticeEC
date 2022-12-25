@@ -4,9 +4,19 @@
     var users = Model.Users;
 }
 
-<h1>Users</h1>
+@*FIXME: search better approach for how to setup page unique style*@
+<link rel="stylesheet" href="~/sass/pages/Users.min.css" />
 
-@foreach (var user in users)
-{
-    <partial name="PartialViews/Organisms/_UserCard" model="@user"></partial>
-}
+<div class="container">
+    <h1>Users</h1>
+
+    @foreach (var user in users)
+    {
+        var vm = new UserCardViewModel
+                {
+                    User = user,
+                    classes = "mb-3"
+                };
+        <partial name="PartialViews/Organisms/_UserCard" model="@vm"></partial>
+    }
+</div>

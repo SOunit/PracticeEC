@@ -7,6 +7,5 @@
 
 @foreach (var user in users)
 {
-    <p>ID: @user.Id</p>
-    <p>Name: @user.Name</p>
+    <partial name="PartialViews/Organisms/_UserCard" model="@user"></partial>
 }

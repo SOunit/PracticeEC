@@ -1,0 +1,12 @@
+﻿@model UsersViewModel;
+@{
+    var users = Model.Users;
+}
+
+<h1>Users</h1>
+
+@foreach (var user in users)
+{
+    <p>ID: @user.Id</p>
+    <p>Name: @user.Name</p>
+}

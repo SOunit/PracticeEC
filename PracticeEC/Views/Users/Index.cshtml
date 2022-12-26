@@ -1,0 +1,22 @@
+﻿@model UsersViewModel;
+@{
+    Layout = "_Layout";
+    var users = Model.Users;
+}
+
+@*FIXME: search better approach for how to setup page unique style*@
+<link rel="stylesheet" href="~/sass/pages/Users.min.css" />
+
+<div class="container">
+    <h1>Users</h1>
+
+    @foreach (var user in users)
+    {
+        var vm = new UserCardViewModel
+                {
+                    User = user,
+                    classes = "mb-3"
+                };
+        <partial name="PartialViews/Organisms/_UserCard" model="@vm"></partial>
+    }
+</div>

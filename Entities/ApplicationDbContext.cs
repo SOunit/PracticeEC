@@ -11,18 +11,18 @@ namespace Entities
         {
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             //Seed to Users
-            string usersJson = System.IO.File.ReadAllText("users.json");
-            List<User> users = System.Text.Json.JsonSerializer.Deserialize<List<User>>(usersJson);
-            foreach (var user in users)
+            string productsJson = System.IO.File.ReadAllText("products.json");
+            List<Product> products = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(productsJson);
+            foreach (var product in products)
             {
-                modelBuilder.Entity<User>().HasData(user);
+                modelBuilder.Entity<Product>().HasData(product);
             }
 
         }

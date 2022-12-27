@@ -10,13 +10,13 @@ namespace PracticeEC.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            var users = new List<User>
+            var users = new List<Product>
             {
-                new User {
+                new Product {
                     Id = new Guid ("6d7bbae9-d104-4daf-9a40-dcbf29167267"),
                     Name = "Jack"
                 },
-                new User {
+                new Product {
                     Id = new Guid ("bdf9940d-4361-4cfc-93d5-24871d161414"),
                     Name = "Becca"
                 },

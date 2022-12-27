@@ -6,7 +6,7 @@ namespace PracticeEC.Controllers
 {
     public class UsersController : Controller
     {
-        //[Route("users")]
+        [Route("users")]
         [Route("/")]
         public IActionResult Index()
         {
